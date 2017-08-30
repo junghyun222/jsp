@@ -18,13 +18,14 @@ public class UserServiceImpl implements UserService {
 		Connection con;
 		try {
 			con = DBConnector.getCon();
-			String sql = "insert into user(id,password,name,hobby)";
-			sql += " values(?,?,?,?)";
+			String sql = "insert into user(id,password,name,hobby,admin)";
+			sql += " values(?,?,?,?,?)";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, hm.get("id"));
 			ps.setString(2, hm.get("pwd"));
 			ps.setString(3, hm.get("name"));
 			ps.setString(4, hm.get("hobby"));
+			ps.setString(4, hm.get("admin"));
 			int row = ps.executeUpdate();
 			if(row==1) {
 				result = hm.get("name") + "님 회원가입에 성공하셨습니다.";

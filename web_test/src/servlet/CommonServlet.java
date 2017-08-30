@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 public class CommonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	
+	
 	public void doProcess(HttpServletResponse resp, String writeStr) 
 			throws IOException {
 		resp.setContentType("text/html;charset=utf-8");
